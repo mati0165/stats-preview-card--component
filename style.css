@@ -19,6 +19,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   font-size: 15px;
+  font-family: "Inter", sans-serif;
 }
 main {
   display: grid;
@@ -26,64 +27,68 @@ main {
   max-width: 1000px;
   border-radius: 10px;
   overflow: hidden;
-  margin: 2rem;
+  background-color: hsl(277, 64%, 61%);
 }
-
-h1 {
-  font-family: "Inter", sans-serif;
-  color: white;
-  margin-bottom: 1.5rem;
-}
-h2 {
-  color: white;
-  font-family: "Inter", sans-serif;
-}
-.main-paragraph {
-  margin-bottom: 6rem;
-}
-p {
-  font-family: "Inter", sans-serif;
-  line-height: 1.6;
-  color: hsla(0, 0%, 100%, 0.75);
+img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  mix-blend-mode: multiply;
 }
 .card {
   background-color: hsl(244, 38%, 16%);
-  padding: 4rem;
-  max-width: 500px;
+  padding: 3.5rem;
 }
-.accent {
+.card h1 {
+  color: hsl(0, 0%, 100%);
+  margin-bottom: 1rem;
+}
+.card h1 .accent {
   color: hsl(277, 64%, 61%);
 }
-.stat-headings span {
-  text-transform: uppercase;
-  color: hsla(0, 0%, 100%, 0.6);
+.card .main-paragraph {
+  color: hsla(0, 0%, 100%, 0.75);
   font-family: "Inter", sans-serif;
-  letter-spacing: 0.05rem;
+  line-height: 1.6;
+  margin-bottom: 5rem;
 }
-.stat-headings h2 {
-  margin-bottom: 0.5rem;
+.card .statistics p {
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
 }
-.image {
-  position: relative;
+.card .statistics span {
+  color: hsla(0, 0%, 100%, 0.6);
+  text-transform: uppercase;
+  font-family: "Lexend Deca", sans-serif;
 }
-.image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.image::after {
-  position: absolute;
-  content: "";
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-  background-color: hsl(277, 64%, 61%);
-  opacity: 0.6;
-}
-.statistics {
+.card .statistics {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+}
+@media only screen and (max-width: 488px) {
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+    text-align: center;
+    margin: 3rem 2rem 0rem 2rem;
+  }
+  .card {
+    padding: 2rem;
+    margin-bottom: -3rem;
+  }
+  .card .statistics {
+    grid-template-columns: 1fr;
+  }
+  .card .main-paragraph {
+    margin-bottom: 2rem;
+  }
+  .card .statistics .stat-headings {
+    margin-bottom: 2rem;
+  }
 }
 .attribution {
   font-size: 11px;
@@ -92,34 +97,4 @@ p {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
-}
-@media only screen and (max-width: 425px) {
-  body {
-    text-align: center;
-  }
-  main {
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    flex-direction: column-reverse;
-    max-width: 500px;
-  }
-  .card {
-    text-align: center;
-    max-width: 390px;
-    padding: 2.55rem;
-    max-height: 550px;
-  }
-  .statistics {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  .stat-headings {
-    margin-bottom: 2rem;
-  }
-  .main-paragraph {
-    margin-bottom: 2rem;
-  }
 }
